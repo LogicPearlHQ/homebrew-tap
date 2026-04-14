@@ -7,6 +7,8 @@ class Logicpearl < Formula
   version "0.1.5"
   license "MIT"
 
+  depends_on "z3"
+
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/LogicPearlHQ/logicpearl/releases/download/v0.1.5/logicpearl-aarch64-apple-darwin.tar.gz"
@@ -23,8 +25,6 @@ class Logicpearl < Formula
       sha256 "c14d888757d8ab29bee203fb2f50befb8d31aba7c13167c9a822f674b32df791"
     end
   end
-
-  depends_on "z3"
 
   def install
     bundle = if (buildpath/"bin/logicpearl").exist?
